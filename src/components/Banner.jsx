@@ -1,7 +1,23 @@
 import { Button } from "@heroui/react";
 import Link from "next/link";
+// try{
 
-const Banner = () => {
+ export const getUser = async() => {
+    const res = await fetch('http://localhost:3000/category.json');
+    const data = await res.json();
+    // console.log(data)
+    return data;
+  }
+
+// catch(err){
+//   console.log("Failed to get error")
+// }
+
+const Banner = async() => {
+  const Data = await getUser()
+  console.log("data",Data)
+  // console.log("data",getUser))
+
   return (
     <div className="bg-[url('https://i.pinimg.com/1200x/8a/fe/83/8afe83b98f339de4c1dd34fde26a86d0.jpg')] h-[60vh] w-full bg-cover bg-no-repeat bg-center flex items-center rounded-lg shadow-2xl">
       {/* Overlay */}
