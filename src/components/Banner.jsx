@@ -2,20 +2,20 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 // try{
 
- export const getUser = async() => {
-    const res = await fetch('/data.json');
-    const data = await res.json();
-    // console.log(data)
-    return data;
-  }
+//  export const getUser = async() => {
+//     const res = await fetch('/data.json');
+//     const data = await res.json();
+//     // console.log(data)
+//     return data;
+//   }
 
 // catch(err){
 //   console.log("Failed to get error")
 // }
 
-const Banner = async() => {
-  const Data = await getUser()
-  console.log("data",Data)
+const Banner = () => {
+  // const Data = await getUser()
+  // console.log("data",Data)
   // console.log("data",getUser))
 
   return (
