@@ -3,7 +3,7 @@ import Link from "next/link";
 // try{
 
  export const getUser = async() => {
-    const res = await fetch('http://localhost:3000/category.json');
+    const res = await fetch('/data.json');
     const data = await res.json();
     // console.log(data)
     return data;
