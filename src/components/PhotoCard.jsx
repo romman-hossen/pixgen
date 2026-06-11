@@ -1,17 +1,19 @@
 import { Button, Card, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaDownload, FaHeart } from "react-icons/fa";
 
 const PhotoCard = ({photosData}) => {
     
     console.log(photosData)
     return (
+
         <Card className="border rounded-xl">
             <div>
                 {/* "id": 1,
     "title": "Realistic Portrait AI",
     "imageUrl": "https://i.pinimg.com/1200x/04/6a/ef/046aef3824fc35cd1ad0bff0f253619a.jpg",
-    "prompt": "Ultra realistic portrait of a young woman, soft light, 85mm lens, depth of field",
+    "prompt": "Ultra realistic portrait of a young div></div>woman, soft light, 85mm lens, depth of field",
     "category": "Realistic",
     "model": "SDXL",
     "resolution": "768x1024",
@@ -46,9 +48,11 @@ const PhotoCard = ({photosData}) => {
                     <h3>{photosData.downloads}</h3>
                 </div>
             </div>
-                <Button className="w-full py-4" variant="outline"> View</Button>
-            
+            <Link href="/all-data">
+                <Button className="w-full py-4" variant="outline"> View</Button>    
+            </Link>
         </Card>
+      
     );
 };
 

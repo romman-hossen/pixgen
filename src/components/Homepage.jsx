@@ -1,5 +1,6 @@
 import { GetData } from "@/lib/data";
 import PhotoCard from "./PhotoCard";
+import { Button } from "@heroui/react";
 
 const Homepage = async() => {
     const data = await GetData();
@@ -12,6 +13,10 @@ const Homepage = async() => {
                     topPhotos.map (photos => <PhotoCard key={photos.id} photosData={photos}></PhotoCard>)
                 }
 
+         </div> 
+         <div className="text-center mt-10">
+
+         <Button className="text-balance md:text-xl lg:text-2xl lg:p-6">View all data</Button>
          </div>
 
         </div>
