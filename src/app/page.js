@@ -1,11 +1,9 @@
-import Banner from "@/components/Banner";
-import { Button } from "@heroui/react";
+import Homepage from "./Home/page";
 
 export default function Home() {
   return (
     <>
-    <Banner></Banner>
-    
+    <Homepage />
     </>
   );
 }
