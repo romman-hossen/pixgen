@@ -12,7 +12,6 @@ const AllDataPage =async () => {
                 {
                     data.map (photos => <PhotoCard key={photos.id} photosData={photos}></PhotoCard>)
                 }
-
          </div> 
         </div>
     );

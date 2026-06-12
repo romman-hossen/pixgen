@@ -48,8 +48,8 @@ const PhotoCard = ({photosData}) => {
                     <h3>{photosData.downloads}</h3>
                 </div>
             </div>
-            <Link href="/all-data">
-                <Button className="w-full py-4" variant="outline"> View</Button>    
+            <Link href={`/all-photos/${photosData.id}`}>
+                <Button className="w-full py-4" variant="outline"> View</Button>      
             </Link>
         </Card>
       

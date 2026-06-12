@@ -16,7 +16,7 @@ export const GetData = async () =>{
     
     catch(error){
         console.error("Fetch Error:", error);
-
+        throw error;
     }
 }
 export const GetCategory = async () => {
