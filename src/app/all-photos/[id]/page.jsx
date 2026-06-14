@@ -9,8 +9,9 @@ const PhotosDataDetails = async({params}) => {
     
     // console.log(typeof id)
     return (
-        <div>
-            <h2>This is Details Section</h2>
+        <div className="max-w-7xl mx-auto my-10">
+            <h2 className="text-3xl font-bold">This is Details Section</h2>
+            <h3>{findData.prompt}</h3>
             
             
         </div>

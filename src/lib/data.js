@@ -1,15 +1,13 @@
 export const GetData = async () =>{
     try{
-        const res = await fetch("https://pixgen-beta.vercel.app/data.json");
-    if(res.ok){
-        const data = await res.json();
-            return data;
+        const res = await fetch("https://pixgen-beta.vercel.app/data.json", {
+    signal: AbortSignal.timeout(30000),
+  });
+    if(!res.ok){
+        throw new Error(`HTTP Error: ${res.status}`);
 
     }
-    else{
-    throw new Error(`HTTP Error: ${res.status}`);
-
-    }
+   return await res.json();
 
     }
     
