@@ -11,20 +11,36 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { object } from "better-auth";
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
+  const router = useRouter();
   const handleSubmit = async(e) =>{
     e.preventDefault();
 
     const fromData = new FormData(e.target)
-    console.log(fromData)
-    // const obj = Object.fromEntries()
+    // console.log(fromData)
+    const obj = Object.fromEntries(fromData.entries());
+    console.log("this is object",obj.email);
     
     // console.log(e.target.name.value);
-    // const { data, error } = await authClient.signUp.email({
+    const { data, error } = await authClient.signUp.email({
+      name: obj.name,
+      image: obj.image,
+      email: obj.email,
+      password: obj.password,
+    })
+    
+    if(error){
+      alert(error.message || "Signup failed");
+      return;
+    }
+    if(data){
+      alert("SignUp sucessfull");
+      router.push('/')
+      return;
 
-    // })
+    }
 
   }
 
