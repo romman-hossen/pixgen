@@ -12,55 +12,39 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 
-export default function SignUpPage() {
+export default function SignInPage() {
   const router = useRouter();
   const handleSubmit = async(e) =>{
     e.preventDefault();
 
     const fromData = new FormData(e.target)
     // console.log(fromData)
-    const obj = Object.fromEntries(fromData.entries());
-    console.log("this is object",obj.email);
-    
+    const obj = Object.fromEntries(fromData.entries());    
     // console.log(e.target.name.value);
-    const { data, error } = await authClient.signUp.email({
-      name: obj.name,
-      image: obj.image,
+    const { data, error } = await authClient.signIn.email({
       email: obj.email,
       password: obj.password,
     })
     
     if(error){
-      alert(error.message || "Signup failed");
+      alert(error.message || "SignIn failed");
       return;
     }
     if(data){
       alert("SignUp sucessfull");
       router.push('/')
-
     }
 
   }
 
-
   return (
     <Card className="border mx-auto w-125 py-10 mt-10 bg-gray-200/30">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+      <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
-
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
-
+     
         <TextField
           isRequired
           name="email"
@@ -108,15 +92,16 @@ export default function SignUpPage() {
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            Login
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
       </Form>
+        <p className="text-center">Or</p>
 
-
+      <Button variant="outline" className={'w-full '}><GrGoogle/> Sign In With Google</Button>
     </Card>
   );
 }
