@@ -8,13 +8,30 @@ import { BiEdit, BiUser } from "react-icons/bi";
 export function UpdateProfile() {
   const onSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const image = e.target.image.value;
+    // const name = e.target.name.value;
+    // const image = e.target.image.value;
+    // // console.log(name)
 
-    await authClient.updateUser({
-        name,
-        image
-    })
+    // await authClient.updateUser({
+    //     name,
+    //     image
+    // })
+  //  const data = Object.fromEntries(new FormData(e.target));
+  //  console.log(data)
+
+  const fromData = new FormData(e.target);
+  const obj = Object.fromEntries(fromData.entries());
+  console.log(obj)
+
+  await authClient.updateUser({
+   name : obj.name,
+   image : obj.image
+  })
+
+  // if(obj){
+  //   revalidatePath("/profile");
+  //   redirect("/home");
+  // }
 
     
   };
