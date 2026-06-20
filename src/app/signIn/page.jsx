@@ -38,6 +38,11 @@ export default function SignInPage() {
     }
 
   }
+    const handleGoogleSignIn = async () =>{
+     await authClient.signIn.social({
+       provider: "google"
+    });
+    }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-10 bg-gray-200/30">
@@ -101,7 +106,7 @@ export default function SignInPage() {
       </Form>
         <p className="text-center">Or</p>
 
-      <Button variant="outline" className={'w-full '}><GrGoogle/> Sign In With Google</Button>
+      <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full '}><GrGoogle/> Sign In With Google</Button>
     </Card>
   );
 }

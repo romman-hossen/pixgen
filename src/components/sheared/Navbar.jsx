@@ -28,6 +28,13 @@ const Navbar = () => {
   //   </div>
   //  )
   // }
+  if(error){
+    return(
+      <div>
+        Use data doesn't find
+      </div>
+    )
+  }
 
   //   console.log('this is isPending ',isPending);
   //   console.log('this is error',error)
