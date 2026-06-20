@@ -4,7 +4,6 @@ import { Avatar, Button, Skeleton } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { DiGroovy } from "react-icons/di";
 
 const Navbar = () => {
   const router = useRouter();
@@ -30,13 +29,13 @@ const Navbar = () => {
   //   </div>
   //  )
   // }
-  if(error){
-    return(
-      <div>
-        User data doesn't find
-      </div>
-    )
-  }
+  // if(error){
+  //   return(
+  //     <div>
+  //       User data doesn't find
+  //     </div>
+  //   )
+  // }
 
   //   console.log('this is isPending ',isPending);
   //   console.log('this is error',error)
@@ -91,10 +90,12 @@ const Navbar = () => {
               </Avatar>
 
               <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
-            </div> : <div className="flex items-center gap-3 text-sm">
-  <Link href="/SignUp">SignUp</Link>
-  <Link href="/signIn">SignIn</Link>
-</div>
+            </div> : !user ? <div className="flex items-center gap-3 text-sm">
+             <Link href="/SignUp">SignUp</Link>
+            <Link href="/signIn">SignIn</Link>
+           </div> : <div>
+             User data doesn't find
+           </div>
           }
         </div>
       </nav>
