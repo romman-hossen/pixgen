@@ -14,7 +14,7 @@ export const GetData = async () =>{
     }
 }
 export const GetCategory = async () => {
-    const res = await fetch("https://pixgen-server-x95u.onrender.com/data");
+    const res = await fetch("https://pixgen-server-x95u.onrender.com/category");
     const data = await res.json();
     return data;
 }

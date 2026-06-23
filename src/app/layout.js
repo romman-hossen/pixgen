@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       className={`${outFit.className} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col">
-        <Navbar />
+        <Navbar/>
         <main className="flex-1">
 
         {children}
