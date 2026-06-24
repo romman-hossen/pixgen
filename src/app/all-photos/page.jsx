@@ -14,7 +14,7 @@ const AllDataPage =async ({searchParams}) => {
     return (
         <div className="max-w-7xl mx-auto">
             <h2 className='text-3xl font-bold my-10'>All Photos</h2>
-            <Category />
+            <Category categoryParams= {category}/>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {
