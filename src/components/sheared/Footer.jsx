@@ -82,7 +82,9 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link
-                  href="/about"
+                  href="https://github.com/romman-hossen"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   className="hover:text-black dark:hover:text-white transition"
                 >
                   About

@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
   const router = useRouter();
+
   const handleSubmit = async(e) =>{
     e.preventDefault();
 
@@ -45,10 +46,10 @@ export default function SignUpPage() {
 
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-10 bg-gray-200/30">
+    <Card className="border mx-5 md:mx-auto max-w-125 py-10 mt-10 bg-gray-200/30">
       <h1 className="text-center text-2xl font-bold">Sign Up</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
+      <Form className="flex max-w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />

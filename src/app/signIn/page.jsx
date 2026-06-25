@@ -45,10 +45,10 @@ export default function SignInPage() {
     }
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-10 bg-gray-200/30">
+    <Card className="border mx-4 md:mx-auto max-w-125 py-10 mt-10 bg-gray-200/30">
       <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
+      <Form className="flex max-w-96 mx-auto flex-col gap-4" onSubmit={handleSubmit}>
      
         <TextField
           isRequired

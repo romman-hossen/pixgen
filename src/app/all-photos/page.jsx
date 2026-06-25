@@ -12,8 +12,8 @@ const AllDataPage =async ({searchParams}) => {
         const findData = category ? data.filter(fData => fData.category.toLowerCase() === category) : data;
       
     return (
-        <div className="max-w-7xl mx-auto">
-            <h2 className='text-3xl font-bold my-10'>All Photos</h2>
+        <div className="max-w-7xl mx-2 md:mx-auto">
+            <h2 className='text-2xl text-center md:text-left md:text-3xl font-bold my-10'>Turn Ideas Into AI Art</h2>
             <Category categoryParams= {category}/>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

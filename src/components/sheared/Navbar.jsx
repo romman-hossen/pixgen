@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Navlinks from "./Navlinks";
 
 const Navbar = () => {
   const router = useRouter();
@@ -58,31 +59,26 @@ const Navbar = () => {
         </div>
         <ul className="hidden  md:flex items-center gap-5 text-sm">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Navlinks className={"text-gray-900"} href={"/"}>Home</Navlinks>
           </li>
           <li>
-            <Link href={"/all-photos"}>All Photos</Link>
+            <Navlinks className={"text-gray-900"} href={"/all-photos"}>All Photos</Navlinks>
           </li>
           <li>
-            <Link href={"/pricing"}>Pricing</Link>
+            <Navlinks className={"text-gray-900"} href={"/pricing"}>Pricing</Navlinks>
           </li>
           <li>
-            <Link href={"/profile"}>Profile</Link>
+           <Navlinks className={"text-gray-900"} href={"/profile"}>Profile</Navlinks>
           </li>
         </ul>
    <div className="md:hidden ">
 
-   
         {open && (
-        <ul className={`md:hidden mt-4 flex flex-col gap-3  text-white bg-purple-300 backdrop-blur-sm  transition-all duration-300 ease-out rounded-2xl absolute top-9 z-20  left-2 p-6 ${
-    open
-      ? "opacity-100 translate-y-0"
-      : "opacity-0 -translate-y-5 pointer-events-none"
-  }`}>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/all-photos">All Photos</Link></li>
-          <li><Link href="/pricing">Pricing</Link></li>
-          <li><Link href="/profile">Profile</Link></li>
+        <ul className={`md:hidden mt-4 flex flex-col gap-3  text-white bg-purple-300 backdrop-blur-sm rounded-2xl absolute top-9 z-20  left-2 p-6`}>
+          <li><Link onClick={() => setOpen(!open)} href="/">Home</Link></li>
+          <li><Link onClick={() => setOpen(!open)} href="/all-photos">All Photos</Link></li>
+          <li><Link onClick={() => setOpen(!open)} href="/pricing">Pricing</Link></li>
+          <li><Link onClick={() => setOpen(!open)} href="/profile">Profile</Link></li>
         </ul>
       )}
       </div>
@@ -109,8 +105,12 @@ const Navbar = () => {
 
               <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
             </div> : !user ? <div className="flex items-center gap-3 text-sm">
-             <Link href="/SignUp">SignUp</Link>
-            <Link href="/signIn">SignIn</Link>
+             <Link href="/SignUp">
+             <Button variant="secondary">SignUp</Button>
+             </Link>
+            <Link href="/signIn">
+            <Button>SignIn</Button>
+          </Link>
            </div> : <div>
              User data doesn't find
            </div>

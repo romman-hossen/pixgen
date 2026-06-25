@@ -8,8 +8,8 @@ const Homepage = async() => {
     const topPhotos = data.slice(0, 8)
     
     return (
-        <div className="max-w-7xl mx-auto">
-            <h2 className='text-3xl font-bold my-10'>This is Homepage</h2>
+        <div className="max-w-7xl mx-2 md:mx-auto">
+            <h2 className='text-2xl  md:text-3xl font-bold my-10'>Discover Stunning AI Generated Images</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {
                     topPhotos.map (photos => <PhotoCard key={photos.id} photosData={photos}></PhotoCard>)
